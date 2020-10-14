@@ -4,11 +4,22 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+function formatName(user) {
+  return user.firstName + ' ' + user.lastName;
+}
+
+const user = {
+  firstName: 'Kylian',
+  lastName: 'Mbappé'
+}
+
+const element = (
+<h1>Bonjour, {formatName(user)}</h1>
+)
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  element,
+  document.getElementById('user')
 );
 
 // If you want your app to work offline and load faster, you can change
